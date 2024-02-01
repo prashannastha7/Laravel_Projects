@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\Post;
 use App\Models\User;
 
@@ -28,29 +29,13 @@ class PostController extends Controller
         $user->post()->save($post);
         return redirect(route('post_index')) -> with('success', 'Post created successfully');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('postedit', ['post' => $post]);
     }
 
     /**

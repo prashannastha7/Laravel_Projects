@@ -24,10 +24,12 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'show_post'])->name('dashboard');
+    
     Route::get('/post', [PostController::class, 'index'])->name('post_index');
     Route::post('/post', [PostController::class, 'create'])->name('post_create');
+    Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post_edit');
 
-    Route::get('/dashboard', [DashboardController::class, 'show_post'])->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

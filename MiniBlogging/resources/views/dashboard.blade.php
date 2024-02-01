@@ -25,7 +25,7 @@
                                 <td class="border px-4 py-2">{{ $post->title }}</td>
                                 <td class="border px-4 py-2">{{ $post->body }}</td>
                                 <td class="border px-4 py-2">
-                                    <a href="" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+                                    <a href="{{url('/post/edit',$post->id)}}" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                                         Edit</a>
                                     <a href="" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                         Delete
