@@ -89,6 +89,11 @@
 
                 <button type="submit">Create Post</button>
             </form>
+            @if (session()->has('success'))
+                <div class="mt-5 shadow bg-purple-500 text-white font-bold py-2 px-4 rounded">
+                    {{ session('success') }}
+                </div>
+                @endif
         </div>
     </div>
     </body>
