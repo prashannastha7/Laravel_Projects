@@ -78,6 +78,7 @@
 
             <form method="POST">
                 @csrf
+                @method('PUT')
 
                 <h2>Create a New Blog</h2>
 

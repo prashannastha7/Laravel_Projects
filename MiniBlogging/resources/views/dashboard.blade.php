@@ -6,6 +6,12 @@
     </x-slot>
 
     <div class="py-12">
+    @if (session()->has('success'))
+                <div class="mt-5 shadow bg-purple-500 text-white font-bold py-2 px-4 rounded">
+                    {{ session('success') }}
+                </div>
+                @endif
+        </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -27,7 +33,7 @@
                                 <td class="border px-4 py-2">
                                     <a href="{{url('/post/edit',$post->id)}}" class="bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                                         Edit</a>
-                                    <a href="" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                    <a href="{{url('/post/delete',$post->id)}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                         Delete
 </a>
                                 </td>
