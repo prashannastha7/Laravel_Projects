@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function show_post(){
-        $posts = Post::all();
+        $posts = Post::paginate(2); //paginate is used to show the number of post per page
         return view('welcome', ['posts' => $posts]);
     }
 }
