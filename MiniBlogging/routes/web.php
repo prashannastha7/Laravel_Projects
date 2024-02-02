@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +17,7 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class,'show_post'])->name ('home'); 
 
 
 //adding the middleware helps to prevent unauthorized access to the post page. while going to /post it going go on login page if you are not logged in.
@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/post', [PostController::class, 'create'])->name('post_create');
     Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post_edit');
     Route::put('/post/edit/{id}', [PostController::class, 'update'])->name('post_update');
-    Route::put('/post/delete/{id}', [PostController::class, 'destroy'])->name('post_delete');
+    Route::get('/post/delete/{id}', [PostController::class, 'destroy'])->name('post_delete');
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
