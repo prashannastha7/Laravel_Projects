@@ -84,6 +84,3 @@ After completing these steps, you can proceed with setting up your project and f
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
